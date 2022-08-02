@@ -17,23 +17,18 @@ var robo = {
 };
 
 function andar(direction) {
-  switch (direction) {
-    case "NORTH":
-      if (robo.posicao.y + 1 < TAM_MAPA_Y) robo.posicao.y++;
-      break;
-    case "EAST":
-      if (robo.posicao.x + 1 < TAM_MAPA_X) robo.posicao.x++;
-      break;
-    case "SOUTH":
-      if (robo.posicao.y - 1 >= 0) robo.posicao.y--;
-      break;
-    case "WEST":
-      if (robo.posicao.x - 1 >= 0) robo.posicao.x--;
-      break;
-
-    default:
-      break;
-  }
+  direction == "NORTH" && robo.posicao.y + 1 < TAM_MAPA_Y
+    ? robo.posicao.y++
+    : robo.posicao.y;
+  direction == "EAST" && robo.posicao.x + 1 < TAM_MAPA_X
+    ? robo.posicao.x++
+    : robo.posicao.x;
+  direction == "SOUTH" && robo.posicao.y - 1 >= 0
+    ? robo.posicao.y--
+    : robo.posicao.y;
+  direction == "WEST" && robo.posicao.x - 1 >= 0
+    ? robo.posicao.x--
+    : robo.posicao.x;
 }
 
 function novaPosicao(sentido) {
