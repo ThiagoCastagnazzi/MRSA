@@ -1,5 +1,23 @@
+var btn_create_table = document.querySelector(".btn-create-table");
+btn_create_table.addEventListener("click", maker);
+
+function maker() {
+  for (let i = 0; i < MAP_SIZE_Y; i++) {
+    let divElement = document.createElement("div");
+    document
+      .querySelector(".game-table")
+      .appendChild(divElement).className = `col${i}`;
+  }
+  for (let i = 0; i < MAP_SIZE_X; i++) {
+    let divElement = document.createElement("div");
+    document
+      .querySelector(".game-table")
+      .appendChild(divElement).className = `row${i}`;
+  }
+}
+
 var MAP_SIZE_X = 5;
-var MAP_SIZE_Y = 10;
+var MAP_SIZE_Y = 5;
 
 const coordinates = {
   NORTH: { LEFT: "WEST", RIGHT: "EAST" },
@@ -54,4 +72,4 @@ function main(dados) {
   }
 }
 
-main("rRrRK");
+main("MMLK");
