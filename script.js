@@ -43,6 +43,9 @@ function rotate(direction) {
 function main(dados) {
   dados = dados.replace(/\s+/g, "").toUpperCase();
   for (let i = 0; i < dados.length; i++) {
+    dados[i] != "L" && dados[i] != "R" && dados[i] != "M"
+      ? console.log(`Caracter ${dados[i]} inválido`)
+      : "";
     dados[i] == "L" || "R" ? rotate(dados[i]) : "";
     dados[i] == "M" ? move(robot.direction) : "";
     console.log("{dado:" + dados[i] + "}");
@@ -51,4 +54,4 @@ function main(dados) {
   }
 }
 
-main("rRrR");
+main("rRrRK");
