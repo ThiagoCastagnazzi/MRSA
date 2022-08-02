@@ -8,16 +8,10 @@ function maker() {
       .querySelector(".game-table")
       .appendChild(divElement).className = `col${i}`;
   }
-  for (let i = 0; i < MAP_SIZE_X; i++) {
-    let divElement = document.createElement("div");
-    document
-      .querySelector(".game-table")
-      .appendChild(divElement).className = `row${i}`;
-  }
 }
 
-var MAP_SIZE_X = 5;
-var MAP_SIZE_Y = 5;
+var MAP_SIZE_X = 7;
+var MAP_SIZE_Y = 5 * MAP_SIZE_X;
 
 const coordinates = {
   NORTH: { LEFT: "WEST", RIGHT: "EAST" },
