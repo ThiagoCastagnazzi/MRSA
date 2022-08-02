@@ -1,50 +1,54 @@
-var TAM_MAPA_X = 5;
-var TAM_MAPA_Y = 10;
+var MAP_SIZE_X = 5;
+var MAP_SIZE_Y = 10;
 
-const coordenadas = {
+const coordinates = {
   NORTH: { LEFT: "WEST", RIGHT: "EAST" },
   EAST: { LEFT: "NORTH", RIGHT: "SOUTH" },
-  SOUTH: { LEFT: "WEST", RIGHT: "EAST" },
+  SOUTH: { LEFT: "", RIGHT: "WEST" },
   WEST: { LEFT: "SOUTH", RIGHT: "NORTH" },
 };
 
-var robo = {
-  posicao: {
+var robot = {
+  position: {
     x: 0,
     y: 0,
   },
-  sentido: "NORTH",
+  direction: "NORTH",
 };
 
-function andar(direction) {
-  direction == "NORTH" && robo.posicao.y + 1 < TAM_MAPA_Y
-    ? robo.posicao.y++
-    : robo.posicao.y;
-  direction == "EAST" && robo.posicao.x + 1 < TAM_MAPA_X
-    ? robo.posicao.x++
-    : robo.posicao.x;
-  direction == "SOUTH" && robo.posicao.y - 1 >= 0
-    ? robo.posicao.y--
-    : robo.posicao.y;
-  direction == "WEST" && robo.posicao.x - 1 >= 0
-    ? robo.posicao.x--
-    : robo.posicao.x;
+function move(direction) {
+  direction == "NORTH" && robot.position.y + 1 < MAP_SIZE_Y
+    ? robot.position.y++
+    : robot.position.y;
+  direction == "EAST" && robot.position.x + 1 < MAP_SIZE_X
+    ? robot.position.x++
+    : robot.position.x;
+  direction == "SOUTH" && robot.position.y - 1 >= 0
+    ? robot.position.y--
+    : robot.position.y;
+  direction == "WEST" && robot.position.x - 1 >= 0
+    ? robot.position.x--
+    : robot.position.x;
 }
 
-function novaPosicao(sentido) {
-  if (sentido == "R") robo.sentido = coordenadas[robo.sentido].RIGHT;
-
-  if (sentido == "L") robo.sentido = coordenadas[robo.sentido].LEFT;
+function rotate(direction) {
+  direction == "R"
+    ? (robot.direction = coordinates[robot.direction].RIGHT)
+    : robot.direction;
+  direction == "L"
+    ? (robot.direction = coordinates[robot.direction].LEFT)
+    : robot.direction;
 }
 
 function main(dados) {
+  dados = dados.replace(/\s+/g, "").toUpperCase();
   for (let i = 0; i < dados.length; i++) {
-    if (dados[i] == "L" || "R") novaPosicao(dados[i]);
-    if (dados[i] == "M") andar(robo.sentido);
+    dados[i] == "L" || "R" ? rotate(dados[i]) : "";
+    dados[i] == "M" ? move(robot.direction) : "";
     console.log("{dado:" + dados[i] + "}");
-    console.log(robo);
+    console.log(robot);
     console.log("\n");
   }
 }
 
-main("MMR");
+main("rRrR");
