@@ -133,7 +133,10 @@ function main(dados) {
     dados[i] == "L" || "R" ? rotate(dados[i]) : "";
     dados[i] == "M" ? move(robot.direction) : "";
     console.log("{dado:" + dados[i] + "}");
-    console.log(robot);
+    console.log(`Posição: ${robot.position.x}x${robot.position.y}`);
+    console.log(`Direção: ${robot.direction}`);
     console.log("\n");
   }
 }
+
+main("MML");
