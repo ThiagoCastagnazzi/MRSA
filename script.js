@@ -2,22 +2,33 @@ var btn_create_table = document.querySelector(".btn-create-table");
 var btn_move_foward = document.querySelector(".btn-move-foward");
 var btn_move_left = document.querySelector(".btn-move-left");
 var btn_move_right = document.querySelector(".btn-move-right");
-var terrenoX = document.querySelector("#terrenoX");
-var terrenoY = document.querySelector("#terrenoY");
+var text_warning = document.querySelector("#text-warning");
+
 btn_create_table.addEventListener("click", makerTable);
 btn_move_foward.addEventListener("click", moveFoward);
 btn_move_left.addEventListener("click", moveLeft);
 btn_move_right.addEventListener("click", moveRight);
 
+var terrenoX = document.querySelector("#terrenoX");
+var terrenoY = document.querySelector("#terrenoY");
+
 function makerTable() {
-  terrenoX = terrenoX.value;
-  terrenoY = terrenoY.value;
+  if (terrenoX.value >= 5 && terrenoY.value >= 5) {
+    makeBox();
+  } else text_warning.innerHTML = "Tamanho do terreno inválido";
+}
+
+function makeBox() {
   let tr = document.createElement("tr");
   document.querySelector(".game-wrapper").appendChild(tr).className =
     "game-table";
-  tr.style.setProperty("grid-template-columns", `repeat(${terrenoY}, 1fr)`);
-  for (let i = terrenoX - 1; i >= 0; i--) {
-    for (let j = 0; j < terrenoY; j++) {
+  tr.style.setProperty(
+    "grid-template-columns",
+    `repeat(${terrenoY.value}, 1fr)`
+  );
+
+  for (let i = terrenoX.value - 1; i >= 0; i--) {
+    for (let j = 0; j < terrenoY.value; j++) {
       let td = document.createElement("td");
       document.querySelector(".game-table").appendChild(td).className = "box";
       td.setAttribute("x", `${i}`);
@@ -36,7 +47,30 @@ function makerTable() {
   console.log(box);
 }
 
-function moveFoward() {}
+function moveFoward() {
+  move(robot1.direction);
+  robot1.direction == "NORTH"
+    ? (robot1.position.y = robot1.position.y + 1)
+    : robot1.position.y;
+  robot1.direction == "EAST"
+    ? (robot1.position.x = robot1.position.x + 1)
+    : robot1.position.x;
+  robot1.direction == "SOUTH"
+    ? (robot1.position.y = robot1.position.y - 1)
+    : robot1.position.y;
+  robot1.direction == "WEST"
+    ? (robot1.position.x = robot1.position.x - 1)
+    : robot1.position.x;
+
+  let box = document.querySelector(
+    `.box[x="${robot1.position.y}"][y="${robot1.position.x}"]`
+  );
+  let img = document.createElement("img");
+  let boxChild = box.appendChild(img);
+  boxChild.id = "robot";
+  boxChild.setAttribute("src", "./robot.png");
+  boxChild.setAttribute("direction", robot1.direction);
+}
 
 var robot1 = {
   position: {
@@ -47,15 +81,11 @@ var robot1 = {
 };
 
 function moveLeft() {
-  direction == "L"
-    ? (robot1.direction = coordinates[robot1.direction].LEFT)
-    : robot1.direction;
+  robot1.direction = coordinates[robot1.direction].LEFT;
 }
 
 function moveRight() {
-  direction == "R"
-    ? (robot1.direction = coordinates[robot1.direction].RIGHT)
-    : robot1.direction;
+  robot1.direction = coordinates[robot1.direction].RIGHT;
 }
 
 var MAP_SIZE_Y = 5;
@@ -114,5 +144,3 @@ function main(dados) {
     console.log("\n");
   }
 }
-
-main("MMLK");

@@ -36,13 +36,18 @@ h1 {
   justify-content: center;
   width: 80px;
   height: 80px;
-  background-color: lightcoral;
   border: 1px solid black;
   border-collapse: collapse;
 }
 
 .game-table {
   display: grid;
+}
+
+#text-warning {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
 }
 
 #robot {
