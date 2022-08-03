@@ -1,17 +1,24 @@
 var btn_create_table = document.querySelector(".btn-create-table");
-btn_create_table.addEventListener("click", maker);
+btn_create_table.addEventListener("click", makerTable);
 
-function maker() {
-  for (let i = 0; i < MAP_SIZE_Y; i++) {
-    let divElement = document.createElement("div");
-    document
-      .querySelector(".game-table")
-      .appendChild(divElement).className = `col${i}`;
+function makerTable() {
+  let tr = document.createElement("tr");
+  document.querySelector(".game-wrapper").appendChild(tr).className =
+    "game-table";
+  tr.style.setProperty("grid-template-columns", `repeat(${MAP_SIZE_Y}, 1fr)`);
+  for (let i = 0; i < MAP_SIZE_X; i++) {
+    for (let j = 0; j < MAP_SIZE_Y; j++) {
+      let td = document.createElement("td");
+      document.querySelector(".game-table").appendChild(td).className = "box";
+      td.setAttribute("x", `${i}`);
+      td.setAttribute("y", `${j}`);
+    }
   }
 }
 
-var MAP_SIZE_X = 7;
-var MAP_SIZE_Y = 5 * MAP_SIZE_X;
+var MAP_SIZE_Y = 5;
+var MAP_SIZE_X = 5;
+var MAP_SIZE = MAP_SIZE_X * MAP_SIZE_Y;
 
 const coordinates = {
   NORTH: { LEFT: "WEST", RIGHT: "EAST" },
