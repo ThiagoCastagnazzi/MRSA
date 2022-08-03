@@ -9,27 +9,26 @@
     <title>Explore Mart</title>
   </head>
   <body>
-    <header class="header">
-      <h1>Explore Marte</h1>
+    <main>
+      <table id="gameMap">
+        <tbody></tbody>
+      </table>
+
       <div>
-        <label for="terrenoX">Informe a Quantidade de Linhas da Tabela: </label>
-        <input type="text" name="terrenoX" id="terrenoX" />
-        <label for="terrenoY"
-          >Informe a Quantidade de Colunas da Tabela:
-        </label>
-        <input type="text" name="terrenoY" id="terrenoY" />
+        <button onclick="limparTabela()">Limpar</button>
+        <button onclick="createGameMap()">Criar</button>
+
+        x: <input id="mapX" type="number" style="width: 50px" value="0" /> y:
+        <input id="mapY" type="number" style="width: 50px" value="0" />
+
+        <button onclick="robotMove()">Andar</button>
+        <button onclick="moveLeft()">Move Left</button>
+        <button onclick="moveRight()">Move Right</button>
       </div>
-      <span id="text-warning"></span>
-    </header>
-    <main class="game-container">
-      <table class="game-wrapper"></table>
-      <div class="btn-container">
-        <button class="btn-move-left">Move Left</button>
-        <button class="btn-move-forward">Move Foward</button>
-        <button class="btn-move-right">Move Right</button>
-      </div>
-      <div class="btn-container">
-        <button class="btn-create-table">Criar Terreno</button>
+      <div>
+        <span id="robotX">Eixo X: </span>
+        <span id="robotY">Eixo Y: </span>
+        <span id="robotDirection">Direção: </span>
       </div>
     </main>
     <script src="./script.js"></script>
