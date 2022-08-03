@@ -70,6 +70,19 @@ function moveFoward() {
   boxChild.id = "robot";
   boxChild.setAttribute("src", "./robot.png");
   boxChild.setAttribute("direction", robot1.direction);
+
+  boxChild.style.setProperty(
+    "transform",
+    `rotate(${
+      robot1.direction == "NORTH"
+        ? 0
+        : robot1.direction == "EAST"
+        ? 90
+        : robot1.direction == "SOUTH"
+        ? 180
+        : 270
+    }deg)`
+  );
 }
 
 var robot1 = {
