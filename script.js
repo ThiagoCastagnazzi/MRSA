@@ -1,11 +1,11 @@
 var btn_create_table = document.querySelector(".btn-create-table");
-var btn_move_foward = document.querySelector(".btn-move-foward");
+var btn_move_forward = document.querySelector(".btn-move-forward");
 var btn_move_left = document.querySelector(".btn-move-left");
 var btn_move_right = document.querySelector(".btn-move-right");
 var text_warning = document.querySelector("#text-warning");
 
 btn_create_table.addEventListener("click", makerTable);
-btn_move_foward.addEventListener("click", moveFoward);
+btn_move_forward.addEventListener("click", moveforward);
 btn_move_left.addEventListener("click", moveLeft);
 btn_move_right.addEventListener("click", moveRight);
 
@@ -13,9 +13,9 @@ var terrenoX = document.querySelector("#terrenoX");
 var terrenoY = document.querySelector("#terrenoY");
 
 function makerTable() {
-  if (terrenoX.value >= 5 && terrenoY.value >= 5) {
-    makeBox();
-  } else text_warning.innerHTML = "Tamanho do terreno inválido";
+  terrenoX.value >= 5 && terrenoY.value >= 5
+    ? makeBox()
+    : (text_warning.innerHTML = "Tamanho do terreno inválido");
 }
 
 function makeBox() {
@@ -44,11 +44,9 @@ function makeBox() {
   boxChild.id = "robot";
   boxChild.setAttribute("src", "./robot.png");
   boxChild.setAttribute("direction", robot1.direction);
-  console.log(box);
 }
 
-function moveFoward() {
-  move(robot1.direction);
+function moveforward() {
   robot1.direction == "NORTH"
     ? (robot1.position.y = robot1.position.y + 1)
     : robot1.position.y;
@@ -70,6 +68,8 @@ function moveFoward() {
   boxChild.id = "robot";
   boxChild.setAttribute("src", "./robot.png");
   boxChild.setAttribute("direction", robot1.direction);
+
+  console.log("ddg", box);
 
   boxChild.style.setProperty(
     "transform",
