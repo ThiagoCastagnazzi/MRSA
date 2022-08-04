@@ -22,22 +22,21 @@ createGameMap();
 
 function robotPosition() {
   robot_positionX.innerHTML = `X: ${robot1.position.x}`;
-  robot_positionY.innerHTML = ` Y: ${robot1.position.y}`;
-  robot_direction.innerHTML = `${robot1.direction}`;
+  robot_positionY.innerHTML = `Y: ${robot1.position.y}`;
+  robot_direction.innerHTML = `Direction: ${robot1.direction}`;
 }
 
 function render() {
-  window.onload = function () {
-    document
-      .getElementById(robot1.position.y + "x" + robot1.position.x)
-      .appendChild(myRobot);
-    myRobot.setAttribute("direction", robot1.direction);
-  };
+  document
+    .getElementById(robot1.position.y + "x" + robot1.position.x)
+    .appendChild(myRobot);
+  myRobot.setAttribute("direction", robot1.direction);
 }
 
 function createGameMap() {
   robotPosition();
   limparTabela();
+
   var mapX = mapXValue.value;
   var mapY = mapYValue.value;
   console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
@@ -56,6 +55,7 @@ function createGameMap() {
       }
     }
   }
+  render();
 }
 
 function robotRotate() {
@@ -77,8 +77,6 @@ function robotRotate() {
 }
 
 function robotMove() {
-  console.log(`robot1.position.x: ${robot1.position.x}`);
-
   robot1.direction == "NORTH" && robot1.position.y + 1 < mapY
     ? robot1.position.y++
     : robot1.position.y;
@@ -108,16 +106,18 @@ function robotMove() {
         : 270
     }deg)`
   );
+  robotPosition();
 }
 
 function limparTabela() {
-  document.querySelectorAll("#gameMap  tbody tr").forEach((a) => {
-    a.remove();
-  });
   robot1.position.x = 0;
   robot1.position.y = 0;
   robot1.direction = "NORTH";
-  render();
+  robotRotate();
+  robotPosition();
+  document.querySelectorAll("#gameMap  tbody tr").forEach((a) => {
+    a.remove();
+  });
 }
 
 function moveLeft() {

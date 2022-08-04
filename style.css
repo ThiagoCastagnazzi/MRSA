@@ -2,7 +2,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   background: rgba(255, 255, 255, 0.5);
   padding: 5px;
   margin-bottom: 10px;
@@ -31,7 +30,7 @@ header {
 .robot-position {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   font-size: 1.2rem;
 }
