@@ -1,5 +1,8 @@
 var mapXValue = document.getElementById("mapX");
 var mapYValue = document.getElementById("mapY");
+var robot_positionX = document.getElementById("robot-position-X");
+var robot_positionY = document.getElementById("robot-position-Y");
+var robot_direction = document.getElementById("robot-direction");
 
 var mapX = mapXValue.value;
 var mapY = mapYValue.value;
@@ -27,6 +30,9 @@ function render() {
 }
 
 function createGameMap() {
+  robot_positionX.innerHTML = `X: ${robot1.position.x}`;
+  robot_positionY.innerHTML = `Y: ${robot1.position.y}`;
+  robot_direction.innerHTML = `Direction: ${robot1.direction}`;
   limparTabela();
   render();
   var mapX = mapXValue.value;
@@ -69,8 +75,21 @@ function robotMove() {
     .getElementById(robot1.position.y + "x" + robot1.position.x)
     .appendChild(myRobot);
   myRobot.setAttribute("direction", robot1.direction);
-
-  console.log(`Eixo X: ${robot1.position.x} Eixo Y:${robot1.position.y}`);
+  myRobot.style.setProperty(
+    "transform",
+    `rotate(${
+      robot1.direction == "NORTH"
+        ? 0
+        : robot1.direction == "EAST"
+        ? 90
+        : robot1.direction == "SOUTH"
+        ? 180
+        : 270
+    }deg)`
+  );
+  robot_positionX.innerHTML = `X: ${robot1.position.x}`;
+  robot_positionY.innerHTML = `Y: ${robot1.position.y}`;
+  robot_direction.innerHTML = `Direction: ${robot1.direction}`;
 }
 
 function limparTabela() {
@@ -84,7 +103,6 @@ function limparTabela() {
 
 function moveLeft() {
   robot1.direction = coordinates[robot1.direction].LEFT;
-  myRobot.classList.toggle("left");
 }
 
 function moveRight() {
