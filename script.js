@@ -41,19 +41,15 @@ function createGameMap() {
   mapY = y.value;
 
   console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
-  if (mapX < 5 || mapY < 5) {
-    alert("Terreno minimo de 5x5");
-  } else {
-    var tableBody = document.getElementById("gameMap");
+  var tableBody = document.getElementById("gameMap");
 
-    for (var i = 0; i < mapX; i++) {
-      var newRow = tableBody.insertRow(i);
+  for (var i = 0; i < mapX; i++) {
+    var newRow = tableBody.insertRow(i);
 
-      for (var j = 0; j < mapY; j++) {
-        var newCell = newRow.insertCell(j);
-        newCell.id = i + "x" + j;
-        newCell.className = "celula";
-      }
+    for (var j = 0; j < mapY; j++) {
+      var newCell = newRow.insertCell(j);
+      newCell.id = i + "x" + j;
+      newCell.className = "celula";
     }
   }
   render();
