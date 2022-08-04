@@ -78,39 +78,18 @@ function robotRotate() {
 }
 
 function robotMove() {
-  // robot1.direction == "NORTH" && robot1.position.y + 1 < mapY
-  //   ? robot1.position.y++
-  //   : robot1.position.y;
-  // robot1.direction == "EAST" && robot1.position.x + 1 <= mapX
-  //   ? robot1.position.x++
-  //   : robot1.position.x;
-  // robot1.direction == "SOUTH" && robot1.position.y - 1 >= 0
-  //   ? robot1.position.y--
-  //   : robot1.position.y;
-  // robot1.direction == "WEST" && robot1.position.x - 1 >= 0
-  //   ? robot1.position.x--
-  //   : robot1.position.x;
-
   switch (robot1.direction) {
     case "NORTH":
-      if (robot1.position.y + 1 < mapY) {
-        robot1.position.y++;
-      }
+      robot1.position.y + 1 < mapY ? robot1.position.y++ : robot1.position.y;
       break;
     case "EAST":
-      if (robot1.position.x + 1 < mapX) {
-        robot1.position.x++;
-      }
+      robot1.position.x + 1 < mapX ? robot1.position.x++ : robot1.position.x;
       break;
     case "SOUTH":
-      if (robot1.position.y - 1 >= 0) {
-        robot1.position.y--;
-      }
+      robot1.position.y - 1 >= 0;
       break;
     case "WEST":
-      if (robot1.position.x - 1 >= 0) {
-        robot1.position.x--;
-      }
+      robot1.position.x - 1 >= 0;
       break;
 
     default:
