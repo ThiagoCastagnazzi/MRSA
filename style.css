@@ -21,6 +21,7 @@ header {
   padding: 5px 10px;
   border-radius: 5px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .robot-position-current {
@@ -89,7 +90,7 @@ input:focus {
 }
 
 .table-container {
-  max-width: max-content;
+  max-width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -139,4 +140,10 @@ img {
 
 .btn-move:nth-child(odd) {
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .table-container {
+    width: max-content;
+  }
 }

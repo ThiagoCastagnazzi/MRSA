@@ -1,11 +1,10 @@
 var mapXValue = document.getElementById("mapX");
 var mapYValue = document.getElementById("mapY");
+var mapX = mapXValue.value;
+var mapY = mapYValue.value;
 var robot_positionX = document.getElementById("robot-position-X");
 var robot_positionY = document.getElementById("robot-position-Y");
 var robot_direction = document.getElementById("robot-direction");
-
-var mapX = mapXValue.value;
-var mapY = mapYValue.value;
 
 var robot1 = {
   position: {
@@ -36,9 +35,11 @@ function render() {
 function createGameMap() {
   robotPosition();
   limparTabela();
+  var x = document.getElementById("mapX");
+  var y = document.getElementById("mapY");
+  mapX = x.value;
+  mapY = y.value;
 
-  var mapX = mapXValue.value;
-  var mapY = mapYValue.value;
   console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
   if (mapX < 5 || mapY < 5) {
     alert("Terreno minimo de 5x5");
@@ -77,18 +78,44 @@ function robotRotate() {
 }
 
 function robotMove() {
-  robot1.direction == "NORTH" && robot1.position.y < mapY
-    ? robot1.position.y++
-    : robot1.position.y;
-  robot1.direction == "EAST" && robot1.position.x < mapX
-    ? robot1.position.x++
-    : robot1.position.x;
-  robot1.direction == "SOUTH" && robot1.position.y - 1 >= 0
-    ? robot1.position.y--
-    : robot1.position.y;
-  robot1.direction == "WEST" && robot1.position.x - 1 >= 0
-    ? robot1.position.x--
-    : robot1.position.x;
+  // robot1.direction == "NORTH" && robot1.position.y + 1 < mapY
+  //   ? robot1.position.y++
+  //   : robot1.position.y;
+  // robot1.direction == "EAST" && robot1.position.x + 1 <= mapX
+  //   ? robot1.position.x++
+  //   : robot1.position.x;
+  // robot1.direction == "SOUTH" && robot1.position.y - 1 >= 0
+  //   ? robot1.position.y--
+  //   : robot1.position.y;
+  // robot1.direction == "WEST" && robot1.position.x - 1 >= 0
+  //   ? robot1.position.x--
+  //   : robot1.position.x;
+
+  switch (robot1.direction) {
+    case "NORTH":
+      if (robot1.position.y + 1 < mapY) {
+        robot1.position.y++;
+      }
+      break;
+    case "EAST":
+      if (robot1.position.x + 1 < mapX) {
+        robot1.position.x++;
+      }
+      break;
+    case "SOUTH":
+      if (robot1.position.y - 1 >= 0) {
+        robot1.position.y--;
+      }
+      break;
+    case "WEST":
+      if (robot1.position.x - 1 >= 0) {
+        robot1.position.x--;
+      }
+      break;
+
+    default:
+      break;
+  }
 
   document
     .getElementById(robot1.position.y + "x" + robot1.position.x)
@@ -107,6 +134,7 @@ function robotMove() {
     }deg)`
   );
   robotPosition();
+  console.log(`X: ${robot1.position.x} Y: ${robot1.position.y}`);
 }
 
 function limparTabela() {
