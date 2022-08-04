@@ -103,10 +103,12 @@ function limparTabela() {
 
 function moveLeft() {
   robot1.direction = coordinates[robot1.direction].LEFT;
+  robotMove();
 }
 
 function moveRight() {
   robot1.direction = coordinates[robot1.direction].RIGHT;
+  robotMove();
 }
 
 // NODE EXEC BELOW
