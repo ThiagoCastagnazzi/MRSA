@@ -77,10 +77,10 @@ function robotRotate() {
 }
 
 function robotMove() {
-  robot1.direction == "NORTH" && robot1.position.y + 1 < mapY
+  robot1.direction == "NORTH" && robot1.position.y < mapY
     ? robot1.position.y++
     : robot1.position.y;
-  robot1.direction == "EAST" && robot1.position.x + 1 < mapX
+  robot1.direction == "EAST" && robot1.position.x < mapX
     ? robot1.position.x++
     : robot1.position.x;
   robot1.direction == "SOUTH" && robot1.position.y - 1 >= 0
