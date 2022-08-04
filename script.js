@@ -86,10 +86,10 @@ function robotMove() {
       robot1.position.x + 1 < mapX ? robot1.position.x++ : robot1.position.x;
       break;
     case "SOUTH":
-      robot1.position.y - 1 >= 0;
+      robot1.position.y - 1 >= 0 ? robot1.position.y-- : robot1.position.y;
       break;
     case "WEST":
-      robot1.position.x - 1 >= 0;
+      robot1.position.x - 1 >= 0 ? robot1.position.x-- : robot1.position.x;
       break;
 
     default:
