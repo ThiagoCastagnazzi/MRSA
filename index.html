@@ -9,26 +9,28 @@
     <title>Explore Mart</title>
   </head>
   <body>
+    <header class="header">
+      <h1>Explore Mars</h1>
+    </header>
     <main>
-      <table id="gameMap">
-        <tbody></tbody>
-      </table>
-
-      <div>
-        <button onclick="limparTabela()">Limpar</button>
-        <button onclick="createGameMap()">Criar</button>
-
-        x: <input id="mapX" type="number" style="width: 50px" value="0" /> y:
-        <input id="mapY" type="number" style="width: 50px" value="0" />
-
-        <button onclick="robotMove()">Andar</button>
-        <button onclick="moveLeft()">Move Left</button>
-        <button onclick="moveRight()">Move Right</button>
+      <div class="map-commands">
+        <label for="mapY">Eixo X: </label>
+        <input id="mapX" type="number" style="width: 50px" value="5" />
+        <label for="mapY">Eixo Y: </label>
+        <input id="mapY" type="number" style="width: 50px" value="5" />
+        <button onclick="createGameMap()" class="btn-create">Criar</button>
+        <button onclick="limparTabela()" class="btn-clear">Limpar</button>
       </div>
-      <div>
-        <span id="robotX">Eixo X: </span>
-        <span id="robotY">Eixo Y: </span>
-        <span id="robotDirection">Direção: </span>
+      <div class="table-container">
+        <table id="gameMap">
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="robot-commands">
+        <button onclick="moveLeft()" class="btn-move">Move Left</button>
+        <button onclick="robotMove()" class="btn-move">Andar</button>
+        <button onclick="moveRight()" class="btn-move">Move Right</button>
       </div>
     </main>
     <script src="./script.js"></script>

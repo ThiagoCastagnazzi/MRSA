@@ -1,69 +1,8 @@
-var mapX = document.getElementById("mapX");
-var mapY = document.getElementById("mapY");
+var mapXValue = document.getElementById("mapX");
+var mapYValue = document.getElementById("mapY");
 
-const myRobot = document.createElement("img");
-myRobot.setAttribute("src", "./robot.png");
-
-createGameMap();
-
-window.onload = function () {
-  document
-    .getElementById(robot1.position.y + "x" + robot1.position.x)
-    .appendChild(myRobot);
-};
-
-function createGameMap() {
-  var tableBody = document.getElementById("gameMap");
-
-  for (var i = 0; i < 5; i++) {
-    var newRow = tableBody.insertRow(i);
-
-    for (var j = 0; j < 5; j++) {
-      var newCell = newRow.insertCell(j);
-      newCell.id = i + "x" + j;
-      newCell.className = "celula";
-    }
-  }
-}
-
-function robotMove() {
-  robot1.direction == "NORTH"
-    ? (robot1.position.y = robot1.position.y + 1)
-    : robot1.position.y;
-  robot1.direction == "EAST"
-    ? (robot1.position.x = robot1.position.x + 1)
-    : robot1.position.x;
-  robot1.direction == "SOUTH"
-    ? (robot1.position.y = robot1.position.y - 1)
-    : robot1.position.y;
-  robot1.direction == "WEST"
-    ? (robot1.position.x = robot1.position.x - 1)
-    : robot1.position.x;
-
-  document
-    .getElementById(robot1.position.y + "x" + robot1.position.x)
-    .appendChild(myRobot);
-  console.log(
-    robot1.position.y + "x" + robot1.position.x + "x" + robot1.direction
-  );
-}
-
-function limparTabela() {
-  document.querySelectorAll("#gameMap  tbody tr").forEach((a) => {
-    a.remove();
-  });
-  robot.position.x = 0;
-  robot.position.y = 0;
-  robot.direction = "NORTH";
-}
-
-function moveLeft() {
-  robot1.direction = coordinates[robot.direction].LEFT;
-}
-
-function moveRight() {
-  robot1.direction = coordinates[robot.direction].RIGHT;
-}
+var mapX = mapXValue.value;
+var mapY = mapYValue.value;
 
 var robot1 = {
   position: {
@@ -73,13 +12,86 @@ var robot1 = {
   direction: "NORTH",
 };
 
+const myRobot = document.createElement("img");
+myRobot.setAttribute("src", "./robot.png");
+
+createGameMap();
+
+function render() {
+  window.onload = function () {
+    document
+      .getElementById(robot1.position.y + "x" + robot1.position.x)
+      .appendChild(myRobot);
+    myRobot.setAttribute("direction", robot1.direction);
+  };
+}
+
+function createGameMap() {
+  limparTabela();
+  render();
+  var mapX = mapXValue.value;
+  var mapY = mapYValue.value;
+  console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
+  if (mapX < 5 || mapY < 5) {
+    alert("Terreno minimo de 5x5");
+  } else {
+    var tableBody = document.getElementById("gameMap");
+
+    for (var i = 0; i < mapX; i++) {
+      var newRow = tableBody.insertRow(i);
+
+      for (var j = 0; j < mapY; j++) {
+        var newCell = newRow.insertCell(j);
+        newCell.id = i + "x" + j;
+        newCell.className = "celula";
+      }
+    }
+  }
+}
+
+function robotMove() {
+  console.log(`robot1.position.x: ${robot1.position.x}`);
+
+  robot1.direction == "NORTH" && robot1.position.y + 1 < mapY
+    ? robot1.position.y++
+    : robot1.position.y;
+  robot1.direction == "EAST" && robot1.position.x + 1 < mapX
+    ? robot1.position.x++
+    : robot1.position.x;
+  robot1.direction == "SOUTH" && robot1.position.y - 1 >= 0
+    ? robot1.position.y--
+    : robot1.position.y;
+  robot1.direction == "WEST" && robot1.position.x - 1 >= 0
+    ? robot1.position.x--
+    : robot1.position.x;
+
+  document
+    .getElementById(robot1.position.y + "x" + robot1.position.x)
+    .appendChild(myRobot);
+  myRobot.setAttribute("direction", robot1.direction);
+
+  console.log(`Eixo X: ${robot1.position.x} Eixo Y:${robot1.position.y}`);
+}
+
+function limparTabela() {
+  document.querySelectorAll("#gameMap  tbody tr").forEach((a) => {
+    a.remove();
+  });
+  robot1.position.x = 0;
+  robot1.position.y = 0;
+  robot1.direction = "NORTH";
+}
+
 function moveLeft() {
   robot1.direction = coordinates[robot1.direction].LEFT;
+  myRobot.classList.toggle("left");
 }
 
 function moveRight() {
   robot1.direction = coordinates[robot1.direction].RIGHT;
 }
+
+// NODE EXEC BELOW
 
 var MAP_SIZE_Y = 5;
 var MAP_SIZE_X = 5;
