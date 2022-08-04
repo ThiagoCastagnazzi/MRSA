@@ -20,6 +20,12 @@ myRobot.setAttribute("src", "./robot.png");
 
 createGameMap();
 
+function robotPosition() {
+  robot_positionX.innerHTML = `X: ${robot1.position.x}`;
+  robot_positionY.innerHTML = ` Y: ${robot1.position.y}`;
+  robot_direction.innerHTML = `${robot1.direction}`;
+}
+
 function render() {
   window.onload = function () {
     document
@@ -30,11 +36,8 @@ function render() {
 }
 
 function createGameMap() {
-  robot_positionX.innerHTML = `X: ${robot1.position.x}`;
-  robot_positionY.innerHTML = `Y: ${robot1.position.y}`;
-  robot_direction.innerHTML = `Direction: ${robot1.direction}`;
+  robotPosition();
   limparTabela();
-  render();
   var mapX = mapXValue.value;
   var mapY = mapYValue.value;
   console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
@@ -53,6 +56,24 @@ function createGameMap() {
       }
     }
   }
+}
+
+function robotRotate() {
+  document.getElementById(robot1.position.y + "x" + robot1.position.x);
+  myRobot.setAttribute("direction", robot1.direction);
+  myRobot.style.setProperty(
+    "transform",
+    `rotate(${
+      robot1.direction == "NORTH"
+        ? 0
+        : robot1.direction == "EAST"
+        ? 90
+        : robot1.direction == "SOUTH"
+        ? 180
+        : 270
+    }deg)`
+  );
+  robotPosition();
 }
 
 function robotMove() {
@@ -87,9 +108,6 @@ function robotMove() {
         : 270
     }deg)`
   );
-  robot_positionX.innerHTML = `X: ${robot1.position.x}`;
-  robot_positionY.innerHTML = `Y: ${robot1.position.y}`;
-  robot_direction.innerHTML = `Direction: ${robot1.direction}`;
 }
 
 function limparTabela() {
@@ -99,16 +117,17 @@ function limparTabela() {
   robot1.position.x = 0;
   robot1.position.y = 0;
   robot1.direction = "NORTH";
+  render();
 }
 
 function moveLeft() {
   robot1.direction = coordinates[robot1.direction].LEFT;
-  robotMove();
+  robotRotate();
 }
 
 function moveRight() {
   robot1.direction = coordinates[robot1.direction].RIGHT;
-  robotMove();
+  robotRotate();
 }
 
 // NODE EXEC BELOW

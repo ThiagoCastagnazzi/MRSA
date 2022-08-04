@@ -1,9 +1,46 @@
-.header {
+header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  opacity: 0.5;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  margin-bottom: 10px;
+  gap: 20px;
+  color: #fff;
+}
+
+.map-size {
+  display: flex;
+  align-items: center;
+}
+
+.btn-create {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.robot-position-current {
+  margin: 0 5px;
+}
+
+.robot-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.robot-position p {
+  padding: 0;
+}
+
+#robot-position-Y {
+  margin-left: 5px;
 }
 
 main {
@@ -14,12 +51,11 @@ main {
 }
 
 label {
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 1rem;
 }
 
 input {
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   color: #fff;
   border: none;
@@ -42,7 +78,7 @@ input:focus {
 
 .map-container,
 .robot-commands {
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .map-container {
@@ -52,40 +88,9 @@ input:focus {
   gap: 100px;
 }
 
-.robot-position-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  padding: 10px;
-  width: 300px;
-  color: #fff;
-  background-color: rgba(231, 231, 231, 0.5);
-  border-radius: 10px;
-}
-
-.robot-position {
-  display: flex;
-  gap: 30px;
-}
-
-.robot-position p {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.map-commands {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .table-container {
-  width: 800px;
-  height: 600px;
+  max-width: max-content;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,8 +101,8 @@ input:focus {
 
 .celula {
   text-align: center;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-style: solid;
   border-color: coral;
   background-size: 100%;
@@ -110,7 +115,7 @@ tbody {
 
 img {
   height: 50px;
-  width: 50px;
+  width: 45px;
 }
 
 .left {
@@ -121,27 +126,17 @@ img {
   transform: rotate(180deg);
 }
 
-.btn-create,
-.btn-clear {
-  width: 100px;
-  height: 40px;
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
 .btn-move {
-  width: 100px;
-  height: 40px;
+  width: max-content;
   background-color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 5px;
   margin: 5px;
   font-size: 15px;
   cursor: pointer;
+  padding: 5px;
+}
+
+.btn-move:nth-child(odd) {
+  margin-bottom: 30px;
 }

@@ -9,38 +9,29 @@
     <title>Explore Mart</title>
   </head>
   <body>
-    <header class="header">
-      <h1>Explore Mars</h1>
+    <header>
+      <div class="map-size">
+          <label for="mapY">Eixo X: </label>
+          <input id="mapX" type="number" style="width: 50px" value="5" />
+          <label for="mapY">Eixo Y: </label>
+          <input id="mapY" type="number" style="width: 50px" value="5" />
+          <button onclick="createGameMap()" class="btn-create">Criar</button>
+        </div>
+          <div class="robot-position">
+            <span class="robot-position-current">Posição Atual:</span>
+              <span id="robot-position-X"></span>
+              <span id="robot-position-Y"></span>
+              <span class="robot-position-current">Direção: </span>
+              <span id="robot-direction"></span>
+            </div>
     </header>
     <main>
-      <div class="map-container">
-        <div class="map-commands">
-          <div>
-            <label for="mapY">Eixo X: </label>
-            <input id="mapX" type="number" style="width: 50px" value="5" />
-            <label for="mapY">Eixo Y: </label>
-            <input id="mapY" type="number" style="width: 50px" value="5" />
-          </div>
-          <div>
-            <button onclick="createGameMap()" class="btn-create">Criar</button>
-            <button onclick="limparTabela()" class="btn-clear">Limpar</button>
-          </div>
-        </div>
-        <div class="robot-position-container">
-          <span>Posição Robo</span>
-          <di class="robot-position">
-            <p id="robot-position-X"></p>
-            <p id="robot-position-Y"></p>
-            <p id="robot-direction"></p>
-          </div>
-        </div>
       </div>
       <div class="table-container">
         <table id="gameMap">
           <tbody></tbody>
         </table>
       </div>
-
       <div class="robot-commands">
         <button onclick="moveLeft()" class="btn-move">Move Left</button>
         <button onclick="robotMove()" class="btn-move">Andar</button>
