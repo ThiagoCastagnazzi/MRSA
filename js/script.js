@@ -23,7 +23,7 @@ const coordinates = {
 };
 
 const myRobot = document.createElement("img");
-myRobot.setAttribute("src", "./robot.png");
+myRobot.setAttribute("src", "../../assets/imgs/robot.png");
 
 createGameMap();
 
