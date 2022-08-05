@@ -47,16 +47,18 @@ function createGameMap() {
   var y = document.getElementById("mapY");
   mapX = x.value;
   mapY = y.value;
+  var tableBody = document.getElementById("gameMap");
 
   console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
   mapX < 5 || mapY < 5
-    ? (alert("Mapa muito pequeno"), (mapX = 5), (mapY = 5))
-    : "";
-  mapX > 8 || mapY > 8
-    ? (alert("Mapa muito grande"), (mapX = 5), (mapY = 5))
-    : "";
+    ? (alert("Mapa muito pequeno, Mínimo de 5x5"), (mapX = 5), (mapY = 5))
+    : mapX,
+    mapY;
 
-  var tableBody = document.getElementById("gameMap");
+  mapX > 8 || mapY > 8
+    ? (alert("Mapa muito grande, Máximo de 8x8"), (mapX = 5), (mapY = 5))
+    : mapX,
+    mapY;
 
   for (var i = 0; i < mapX; i++) {
     var newRow = tableBody.insertRow(i);
