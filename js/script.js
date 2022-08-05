@@ -109,10 +109,10 @@ function robotRotate() {
 function robotMove() {
   switch (robot.direction) {
     case "NORTH":
-      robot.position.y + 1 < mapY ? robot.position.x++ : robot.position.y;
+      robot.position.y + 1 <= mapY ? robot.position.x++ : robot.position.y;
       break;
     case "EAST":
-      robot.position.x + 1 < mapX ? robot.position.y++ : robot.position.x;
+      robot.position.x + 1 <= mapX ? robot.position.y++ : robot.position.x;
       break;
     case "SOUTH":
       robot.position.x - 1 >= 0 ? robot.position.x-- : robot.position.y;
