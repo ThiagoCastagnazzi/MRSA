@@ -11,6 +11,8 @@
   <body>
     <header>
       <div class="map-size">
+        <span class="map-size-text">Tamanho Máximo de 8x8 e Mínimo de 5x5</span>
+        <div>
           <label for="mapY">Eixo X: </label>
           <input id="mapX" type="number" style="width: 50px" value="5" />
           <label for="mapY">Eixo Y: </label>
@@ -25,7 +27,7 @@
             </div>
               <div>
                 <span class="robot-position-current">Direção: </span>
-              <span id="robot-direction"></span>
+                <span id="robot-direction"></span>
               </div>
             </div>
     </header>
@@ -37,7 +39,12 @@
         </table>
       </div>
       <div class="robot-command-container">
-        <label for="robot-command">Digite o Comando ao Robo: </label>
+        <div>
+        <span class="robot-command-instruction">"M" Andar |</span>
+        <span class="robot-command-instruction">"L" Virar a Esquerda |</span>
+        <span class="robot-command-instruction">"R" Virar a Direita</span>
+      </div>
+        <label for="robot-command">Comando ao Robo: </label>
         <input type="text" name="robot-command" id="robot-command">
         <button onclick="runCommand()" class="robot-sendCommand">Enviar</button>
       </div>

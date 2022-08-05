@@ -30,7 +30,7 @@ createGameMap();
 function robotPosition() {
   robot_positionX.innerHTML = `X: ${robot.position.x}`;
   robot_positionY.innerHTML = `Y: ${robot.position.y}`;
-  robot_direction.innerHTML = `Direction: ${robot.direction}`;
+  robot_direction.innerHTML = `${robot.direction}`;
 }
 
 function render() {
@@ -55,6 +55,7 @@ function createGameMap() {
   mapX > 8 || mapY > 8
     ? (alert("Mapa muito grande"), (mapX = 5), (mapY = 5))
     : "";
+
   var tableBody = document.getElementById("gameMap");
 
   for (var i = 0; i < mapX; i++) {

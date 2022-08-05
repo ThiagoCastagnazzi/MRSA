@@ -5,8 +5,6 @@ header {
   flex-wrap: wrap;
   background: rgba(255, 255, 255, 0.5);
   padding: 5px;
-  margin-bottom: 10px;
-  gap: 20px;
 }
 
 h1 {
@@ -23,7 +21,14 @@ main {
 
 .map-size {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 5px;
+}
+
+.map-size-text {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .btn-create {
@@ -45,10 +50,6 @@ input[type="text"] {
   outline: none;
 }
 
-#robot-direction {
-  position: absolute;
-}
-
 .robot-position-current {
   margin: 0 5px;
 }
@@ -56,7 +57,6 @@ input[type="text"] {
 .robot-position {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
   font-size: 1.2rem;
 }
@@ -119,7 +119,7 @@ label {
 
 .table-container {
   max-width: 100%;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,9 +156,15 @@ img {
 }
 
 .robot-command-container {
+  text-align: center;
   border: 1px solid lightgray;
   padding: 5px 10px;
   margin-top: 20px;
+}
+
+.robot-command-instruction {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .btn-move,
@@ -173,23 +179,25 @@ img {
   padding: 5px;
 }
 
-.btn-move:nth-child(2) {
-  margin-bottom: 90px;
+.btn-move:nth-child(odd) {
+  position: relative;
+  top: 40px;
 }
 
 @media screen and (max-width: 768px) {
-  header {
-    gap: 5px;
+  .map-size-text {
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   .celula {
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
   }
 
   img {
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
   }
 
   label {
