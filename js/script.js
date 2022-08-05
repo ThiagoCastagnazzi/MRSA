@@ -49,7 +49,7 @@ function createGameMap() {
   mapY = y.value;
   var tableBody = document.getElementById("gameMap");
 
-  if (mapX < 5 || mapY < 5 || mapX > 8 || mapY > 8) {
+  if (mapX < 5 || mapY < 5 || (mapX > 8 && mapY > 8)) {
     alert("O mapa deve ter entre 5 e 8 linhas e colunas");
     mapX = 5;
     mapY = 5;
@@ -108,16 +108,16 @@ function robotRotate() {
 function robotMove() {
   switch (robot.direction) {
     case "NORTH":
-      robot.position.y + 1 < mapY ? robot.position.y++ : robot.position.y;
+      robot.position.y <= mapY ? robot.position.y++ : robot.position.y;
       break;
     case "EAST":
-      robot.position.x + 1 < mapX ? robot.position.x++ : robot.position.x;
+      robot.position.x <= mapX ? robot.position.x++ : robot.position.x;
       break;
     case "SOUTH":
-      robot.position.y - 1 >= 0 ? robot.position.y-- : robot.position.y;
+      robot.position.y >= mapY ? robot.position.y-- : robot.position.y;
       break;
     case "WEST":
-      robot.position.x - 1 >= 0 ? robot.position.x-- : robot.position.x;
+      robot.position.x >= mapY ? robot.position.x-- : robot.position.x;
       break;
 
     default:
