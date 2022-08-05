@@ -141,7 +141,6 @@ function robotMove() {
     }deg)`
   );
   robotPosition();
-  console.log(`X: ${robot.position.x} Y: ${robot.position.y}`);
 }
 
 function limparTabela() {
