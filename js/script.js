@@ -28,8 +28,8 @@ myRobot.setAttribute("src", "../../assets/imgs/robot.png");
 createGameMap();
 
 function robotPosition() {
-  robot_positionX.innerHTML = `X: ${robot.position.x}`;
-  robot_positionY.innerHTML = `Y: ${robot.position.y}`;
+  robot_positionX.innerHTML = `X: ${robot.position.y}`;
+  robot_positionY.innerHTML = `Y: ${robot.position.x}`;
   robot_direction.innerHTML = `${robot.direction}`;
 }
 
@@ -49,7 +49,7 @@ function createGameMap() {
   mapY = y.value;
   var tableBody = document.getElementById("gameMap");
 
-  if (mapX < 5 || mapY < 5 || (mapX > 8 && mapY > 8)) {
+  if (mapX < 5 || mapY < 5 || mapX > 8 || mapY > 8) {
     alert("O mapa deve ter entre 5 e 8 linhas e colunas");
     mapX = 5;
     mapY = 5;
@@ -63,6 +63,7 @@ function createGameMap() {
       newCell.className = "celula";
     }
   }
+
   render();
 }
 
