@@ -8,6 +8,7 @@ header {
 }
 
 h1 {
+  margin: 5px;
   text-align: center;
 }
 
@@ -16,7 +17,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .map-size {
@@ -58,7 +59,7 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .robot-position p {
@@ -130,8 +131,8 @@ label {
 
 .celula {
   text-align: center;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border-style: solid;
   border-color: coral;
   background-size: 100%;
@@ -143,8 +144,8 @@ tbody {
 }
 
 img {
-  height: 50px;
-  width: 45px;
+  height: 40px;
+  width: 35px;
 }
 
 .left {
