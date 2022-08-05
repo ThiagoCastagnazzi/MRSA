@@ -28,8 +28,8 @@ myRobot.setAttribute("src", "../../assets/imgs/robot.png");
 createGameMap();
 
 function robotPosition() {
-  robot_positionY.innerHTML = `Y: ${robot.position.y}`;
-  robot_positionX.innerHTML = `X: ${robot.position.x}`;
+  robot_positionX.innerHTML = `Y: ${robot.position.y}`;
+  robot_positionY.innerHTML = `X: ${robot.position.x}`;
   robot_direction.innerHTML = `${robot.direction}`;
 }
 
@@ -54,10 +54,10 @@ function createGameMap() {
     mapX = 5;
     mapY = 5;
   }
-  for (var i = 0; i < mapY; i++) {
+  for (var i = 0; i < mapX; i++) {
     var newRow = tableBody.insertRow(i);
 
-    for (var j = 0; j < mapX; j++) {
+    for (var j = 0; j < mapY; j++) {
       var newCell = newRow.insertCell(j);
       newCell.id = i + "x" + j;
       newCell.className = "celula";
@@ -89,7 +89,7 @@ function getCommand(dado) {
 }
 
 function robotRotate() {
-  document.getElementById(robot.position.x + "x" + robot.position.y);
+  document.getElementById(robot.position.y + "x" + robot.position.x);
   myRobot.setAttribute("direction", robot.direction);
   myRobot.style.setProperty(
     "transform",
@@ -109,16 +109,16 @@ function robotRotate() {
 function robotMove() {
   switch (robot.direction) {
     case "NORTH":
-      robot.position.y + 1 <= mapY ? robot.position.x++ : robot.position.y;
+      robot.position.y + 1 < mapX ? robot.position.y++ : robot.position.y;
       break;
     case "EAST":
-      robot.position.x + 1 <= mapX ? robot.position.y++ : robot.position.x;
+      robot.position.x + 1 < mapY ? robot.position.x++ : robot.position.x;
       break;
     case "SOUTH":
-      robot.position.x - 1 >= 0 ? robot.position.x-- : robot.position.y;
+      robot.position.y - 1 >= 0 ? robot.position.y-- : robot.position.y;
       break;
     case "WEST":
-      robot.position.y - 1 >= 0 ? robot.position.y-- : robot.position.x;
+      robot.position.x - 1 >= 0 ? robot.position.x-- : robot.position.x;
       break;
 
     default:
@@ -126,7 +126,7 @@ function robotMove() {
   }
 
   document
-    .getElementById(robot.position.x + "x" + robot.position.y)
+    .getElementById(robot.position.y + "x" + robot.position.x)
     .appendChild(myRobot);
   myRobot.setAttribute("direction", robot.direction);
   myRobot.style.setProperty(
