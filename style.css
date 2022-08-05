@@ -29,10 +29,24 @@ main {
 .btn-create {
   background: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border-radius: 100px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+input[type="text"] {
+  width: 10ch;
+  padding: 2px 4px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+#robot-direction {
+  position: absolute;
 }
 
 .robot-position-current {
@@ -142,10 +156,13 @@ img {
 }
 
 .robot-command-container {
+  border: 1px solid lightgray;
+  padding: 5px 10px;
   margin-top: 20px;
 }
 
-.btn-move {
+.btn-move,
+.robot-sendCommand {
   width: max-content;
   background-color: #fff;
   border: none;
