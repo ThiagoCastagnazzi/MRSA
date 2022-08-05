@@ -9,7 +9,6 @@
     <title>Explore Mart</title>
   </head>
   <body>
-    <div class="container">
     <header>
       <div class="map-size">
           <label for="mapY">Eixo X: </label>
@@ -30,20 +29,26 @@
               </div>
             </div>
     </header>
+    <h1>Explore Mars</h1>
     <main>
       <div class="table-container">
         <table id="gameMap">
           <tbody></tbody>
         </table>
       </div>
+      <div class="robot-command-container">
+        <label for="robot-command">Comando</label>
+        <input type="text" name="robot-command" id="robot-command">
+        <button onclick="runCommand()">Enviar</button>
+      </div>
       <div class="robot-commands">
         <button onclick="moveLeft()" class="btn-move">Move Left</button>
         <button onclick="robotMove()" class="btn-move">Andar</button>
         <button onclick="moveRight()" class="btn-move">Move Right</button>
       </div>
+    </div>
     </main>
-  </div>
+    
     <script src="./script.js"></script>
-  </div>
   </body>
 </html>

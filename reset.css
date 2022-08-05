@@ -8,8 +8,9 @@ body {
 
 body {
   background: url(./background-mars.jpg) no-repeat center center fixed;
-  background-size: 100%;
+  background-size: cover;
   height: 100vh;
+  color: #fff;
 }
 
 a {
