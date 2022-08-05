@@ -49,17 +49,11 @@ function createGameMap() {
   mapY = y.value;
   var tableBody = document.getElementById("gameMap");
 
-  console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
-  mapX < 5 || mapY < 5
-    ? (alert("Mapa muito pequeno, Mínimo de 5x5"), (mapX = 5), (mapY = 5))
-    : mapX,
-    mapY;
-
-  mapX > 8 || mapY > 8
-    ? (alert("Mapa muito grande, Máximo de 8x8"), (mapX = 5), (mapY = 5))
-    : mapX,
-    mapY;
-
+  if (mapX < 5 || mapY < 5 || mapX > 8 || mapY > 8) {
+    alert("O mapa deve ter entre 5 e 8 linhas e colunas");
+    mapX = 5;
+    mapY = 5;
+  }
   for (var i = 0; i < mapX; i++) {
     var newRow = tableBody.insertRow(i);
 

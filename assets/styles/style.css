@@ -109,6 +109,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .map-container {
@@ -178,11 +179,6 @@ img {
   font-size: 15px;
   cursor: pointer;
   padding: 5px;
-}
-
-.btn-move:nth-child(odd) {
-  position: relative;
-  top: 40px;
 }
 
 @media screen and (max-width: 768px) {

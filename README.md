@@ -15,7 +15,7 @@
 
 MRSA - É um robô deve ser colocado pela MRSA (Mercado Radar Space Agency) para explorar um terreno em Marte.
 
-## Projeto desenvolvido **Como um Desafio Lógico** oferecida pelo [Mercado Radar](https://www.mercadoradar.com.br/).
+## Projeto desenvolvido **Como um Desafio de Lógica** oferecida pelo [Mercado Radar](https://www.mercadoradar.com.br/).
 
 ## ⚙️ Funcionalidades
 
@@ -102,7 +102,3 @@ Este projeto esta sobe a licença [MIT](./LICENSE).
 Feito com ❤️ por Thiago Castagnazzi 👋🏽 [Entre em contato!](https://www.linkedin.com/in/thiago-castagnazzi-280652230/)
 
 ---
-
-## Versões do README
-
-[Português 🇧🇷](./README.md)
