@@ -54,10 +54,10 @@ function createGameMap() {
     mapX = 5;
     mapY = 5;
   }
-  for (var i = 0; i < mapX; i++) {
+  for (var i = 0; i < mapY; i++) {
     var newRow = tableBody.insertRow(i);
 
-    for (var j = 0; j < mapY; j++) {
+    for (var j = 0; j < mapX; j++) {
       var newCell = newRow.insertCell(j);
       newCell.id = i + "x" + j;
       newCell.className = "celula";
@@ -109,10 +109,10 @@ function robotRotate() {
 function robotMove() {
   switch (robot.direction) {
     case "NORTH":
-      robot.position.y + 1 < mapX ? robot.position.y++ : robot.position.y;
+      robot.position.y + 1 < mapY ? robot.position.y++ : robot.position.y;
       break;
     case "EAST":
-      robot.position.x + 1 < mapY ? robot.position.x++ : robot.position.x;
+      robot.position.x + 1 < mapX ? robot.position.x++ : robot.position.x;
       break;
     case "SOUTH":
       robot.position.y - 1 >= 0 ? robot.position.y-- : robot.position.y;
