@@ -84,14 +84,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 🦸 Autor
 
-<a href="https://blog.rocketseat.com.br/author/thiago/">
+<a href="https://www.linkedin.com/in/thiago-castagnazzi-280652230/">
  <img style="border-radius: 50%;" src="./assets/readme/Thiago.png" width="100px;" alt=""/>
  <br />
  <sub><b>Thiago Castagnazzi</b></sub></a> <a href="https://github.com/ThiagoCastagnazzi/" title="GitHub">🚀</a>
  <br />
 
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/thiago-castagnazzi-280652230/)
-[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:thiagocastagnazzi@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thiago-castagnazzi-280652230/)](https://www.linkedin.com/in/thiago-castagnazzi-280652230/)
+[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:thiagocastagnazzi@gmail.com)](mailto:thiagocastagnazzi@gmail.com)
 
 ---
 
