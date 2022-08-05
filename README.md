@@ -85,7 +85,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ## 🦸 Autor
 
 <a href="https://blog.rocketseat.com.br/author/thiago/">
- <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/380327?s=460&u=61b426b901b8fe02e12019b1fdb67bf0072d4f00&v=4" width="100px;" alt=""/>
+ <img style="border-radius: 50%;" src="./Thiago.png" width="100px;" alt=""/>
  <br />
  <sub><b>Thiago Castagnazzi</b></sub></a> <a href="https://github.com/ThiagoCastagnazzi/" title="GitHub">🚀</a>
  <br />
