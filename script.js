@@ -49,6 +49,12 @@ function createGameMap() {
   mapY = y.value;
 
   console.log(`Mapa X: ${mapX} Mapa Y: ${mapY}`);
+  mapX < 5 || mapY < 5
+    ? (alert("Mapa muito pequeno"), (mapX = 5), (mapY = 5))
+    : "";
+  mapX > 8 || mapY > 8
+    ? (alert("Mapa muito grande"), (mapX = 5), (mapY = 5))
+    : "";
   var tableBody = document.getElementById("gameMap");
 
   for (var i = 0; i < mapX; i++) {
