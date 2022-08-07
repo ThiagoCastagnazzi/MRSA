@@ -93,7 +93,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  <br />
 
 [![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thiago-castagnazzi-280652230/)](https://www.linkedin.com/in/thiago-castagnazzi-280652230/)
-[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:thiagocastagnazzi@gmail.com)](mailto:thiagocastagnazzi@gmail.com)
+[![Gmail Badge](https://img.shields.io/badge/-thiagocastagnazzi@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:thiagocastagnazzi@gmail.com)](mailto:thiagocastagnazzi@gmail.com)
 
 ---
 
